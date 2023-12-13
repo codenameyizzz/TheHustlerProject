@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Hustler - Expense Tracker</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+<body>
+    <div id="app">
+        <h1>The Hustler - Expense Tracker</h1>
+        <div id="panels">
+            <div class="panel" onclick="showHome()">Home</div>
+            <div class="panel" onclick="showDashboard()">Dashboard</div>
+            <div class="panel" onclick="showProfile()">Profile</div>
+        </div>
+        <div id="homePanel">
+            <h2>Home Panel</h2>
+            <div id="homeFeatures">
+                <button onclick="showDiscountFeature()">Calculate Discount</button>
+                <button onclick="showBusinessProbabilityFeature()">Calculate Business Probability</button>
+                <button onclick="showTaxesFeature()">Calculate Taxes</button>
+            </div>
+            <div id="discountFeature" style="display: none;">
+                <h3>Calculate Discount</h3>
+                <form id="discountForm">
+                    <label for="originalPrice">Original Price:</label>
+                    <input type="number" id="originalPrice" required>
+
+                    <label for="discountPercentage">Discount Percentage (%):</label>
+                    <input type="number" id="discountPercentage" required>
+
+                    <button type="button" onclick="calculateDiscount()">Calculate Discount</button>
+                </form>
+                <div id="discountResult"></div>
+            </div>
+            <div id="businessProbabilityFeature" style="display: none;">
+                <h3>Calculate Business Probability</h3>
+                <form id="businessForm">
+                    <label for="businessAmount">Business Amount:</label>
+                    <input type="number" id="businessAmount" required>
+
+                    <label for="taxRate">Tax Rate (%):</label>
+                    <input type="number" id="businessTaxRate" required>
+
+                    <label for="discount">Discount (%):</label>
+                    <input type="number" id="businessDiscount" required>
+
+                    <button type="button" onclick="calculateBusinessProbability()">Calculate Probability</button>
+                </form>
+                <div id="businessResult"></div>
+            </div>
+            <div id="taxesFeature" style="display: none;">
+                <h3>Calculate Taxes</h3>
+                <form id="taxesForm">
+                    <label for="taxableIncome">Taxable Income:</label>
+                    <input type="number" id="taxableIncome" required>
+
+                    <label for="federalRate">Federal Tax Rate (%):</label>
+                    <input type="number" id="federalRate" required>
+
+                    <label for="stateRate">State Tax Rate (%):</label>
+                    <input type="number" id="stateRate" required>
+
+                    <label for="localRate">Local Tax Rate (%):</label>
+                    <input type="number" id="localRate" required>
+
+                    <button type="button" onclick="calculateTaxes()">Calculate Taxes</button>
+                </form>
+                <div id="taxesResult"></div>
+            </div>
+        </div>
+        <div id="dashboardPanel" style="display: none;">
+            <h2>Dashboard</h2>
+            <canvas id="operationChart"></canvas>
+        </div>
+        <div id="profilePanel" style="display: none;">
+            <h2>Profile</h2>
+            <p>Name: Yizreel Schwartz Sipahutar</p>
+            <p>NIM: 11S22038</p>
+            <p>Copyright The Hustler by Yizreel Schwartz Sipahutar 2023</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
